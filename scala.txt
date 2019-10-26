@@ -1,0 +1,48 @@
+****************You can place code into named packages in Scala in two ways****************
+package bobsrockets.navigation 
+class Navigator // into package we have the class 
+//"Navigator"
+
+
+package bobsrockets.navigation {
+class Navigator//we can specify with brackets that inside our //package we have 
+}                // the class "Navigator"
+
+********************* ready package************************************
+
+package bobsdelights //create out package
+abstract class Fruit(//abstract class
+    val name: String, // variables inmutables
+    val color: String
+)
+object Fruits { //we have our object fruits
+    object Apple extends Fruit("apple", "red")
+    object Orange extends Fruit("orange", "orange")
+    object Pear extends Fruit("pear", "yellowish")
+    val menu = List(Apple, Orange, Pear)
+}
+// we have ready our package for import
+
+
+**************** Scala’s flexible imports******************************
+
+import fruit._ //Imports into Scala can appear anywhere, not 
+//just at the beginning of a //compilation unit.
+
+
+import Fruits.{Pear => _, _}// it mean that the pear is renowden to  "_" so of this  form is very useful for avoid 
+//ambiguities
+
+
+
+
+**************implicit imports*******************************
+
+//these packages already have predefined classes and common objects definitions of types
+//methods and implicit conversions that are commonly used in Scala programs.
+
+import java.lang._ // everything in the java.lang //package
+
+import scala._ // everything in the scala package
+
+import Predef._ // everything in the Predef object
